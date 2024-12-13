@@ -1,7 +1,45 @@
-import { defineConfig } from 'vite'
+import { defineConfig } from "vite";
 import vue from '@vitejs/plugin-vue'
 
-// https://vite.dev/config/
+import Components from 'unplugin-vue-components/vite';
+import { PrimeVueResolver } from '@primevue/auto-import-resolver';
+import AutoImport from 'unplugin-auto-import/vite'
+import { fileURLToPath, URL } from 'node:url';
+// import fs from "fs";
+import eslintPlugin from 'vite-plugin-eslint';
+
+// SSL 인증서 적용
+// const https = {
+//   key: fs.readFileSync("./ssl/star_etaas_co_kr_NginX_nopass_key.pem"),
+//   cert: fs.readFileSync("./ssl/star_etaas_co_kr_NginX_cert.pem")
+// };
+
+
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    eslintPlugin(),
+    Components({
+      resolvers: [
+        PrimeVueResolver()
+      ]
+    }),
+    AutoImport({
+      imports: ['vue', 'vue-router', 'pinia'],
+      dts: true,
+      eslintrc: {
+        enabled: false,
+        globalsPropValue: true,
+      },
+    }),
+  ],
+  // server: {},
+  // build: {},
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      // '@': path.resolve(__dirname,'./src'),
+    },
+    extensions: ['.ts', '.js', '.jsx', '.tsx', '.json', '.vue'],
+  }
 })

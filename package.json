@@ -9,12 +9,39 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.5.13"
+    "@element-plus/icons-vue": "^2.3.1",
+    "@vueuse/core": "^11.0.3",
+    "axios": "^1.7.7",
+    "element-plus": "^2.9.0",
+    "reset-css": "^5.0.2",
+    "sass": "^1.81.0",
+    "vue": "^3.5.13",
+    "vue-router": "^4.4.5"
   },
   "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "@primevue/auto-import-resolver": "^4.2.2",
+    "@testing-library/vue": "^8.1.0",
+    "@types/node": "^22.3.0",
+    "@types/vue": "^2.0.0",
     "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/eslint-config-prettier": "^10.1.0",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-vue": "^9.31.0",
+    "happy-dom": "^14.12.0",
+    "postcss": "^8.4.41",
+    "postcss-import": "^16.1.0",
+    "prettier": "^3.3.3",
     "typescript": "~5.6.2",
+    "typescript-eslint": "^8.15.0",
+    "unplugin-auto-import": "^0.18.5",
+    "unplugin-vue-components": "^0.27.4",
     "vite": "^6.0.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vitest": "^1.6.0",
     "vue-tsc": "^2.1.10"
   }
 }
